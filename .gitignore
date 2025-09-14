@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.env
+venv/
+
+# Android/Gradle
+.gradle/
+build/
+local.properties
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db

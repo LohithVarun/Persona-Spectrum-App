@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".CreateAccountActivity">
+
+    <ImageView
+        android:id="@+id/back_arrow"
+        android:layout_width="47dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:src="@drawable/ic_back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/create_account_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="Create Your Account"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/email_username_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/rounded_edittext"
+        android:hint="Enter your email or username"
+        android:inputType="textEmailAddress"
+        android:padding="16dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@+id/password_input_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/create_account_title"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.3"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:boxBackgroundMode="none"
+        app:hintEnabled="false"
+        app:layout_constraintBottom_toTopOf="@+id/confirm_password_input_layout"
+        app:layout_constraintEnd_toEndOf="@+id/email_username_input"
+        app:layout_constraintStart_toStartOf="@+id/email_username_input"
+        app:layout_constraintTop_toBottomOf="@+id/email_username_input"
+        app:passwordToggleDrawable="@drawable/password_toggle"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@android:color/white">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext"
+            android:hint="Enter your Password"
+            android:inputType="textPassword"
+            android:padding="16dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/darker_gray" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/confirm_password_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:boxBackgroundMode="none"
+        app:hintEnabled="false"
+        app:layout_constraintBottom_toTopOf="@+id/terms_of_service"
+        app:layout_constraintEnd_toEndOf="@+id/password_input_layout"
+        app:layout_constraintStart_toStartOf="@+id/password_input_layout"
+        app:layout_constraintTop_toBottomOf="@+id/password_input_layout"
+        app:passwordToggleDrawable="@drawable/password_toggle"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@android:color/white">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirm_password_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext"
+            android:hint="Re-enter your Password"
+            android:inputType="textPassword"
+            android:padding="16dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/darker_gray" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/terms_of_service"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="By creating an account, you agree to our Terms of Service and Privacy Policy."
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/create_account_button"
+        app:layout_constraintEnd_toEndOf="@+id/confirm_password_input_layout"
+        app:layout_constraintStart_toStartOf="@+id/confirm_password_input_layout"
+        app:layout_constraintTop_toBottomOf="@+id/confirm_password_input_layout" />
+
+    <Button
+        android:id="@+id/create_account_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rounded_button_background"
+        android:text="Create Account"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/sign_in_link"
+        app:layout_constraintEnd_toEndOf="@+id/terms_of_service"
+        app:layout_constraintStart_toStartOf="@+id/terms_of_service"
+        app:layout_constraintTop_toBottomOf="@+id/terms_of_service" />
+
+    <TextView
+        android:id="@+id/sign_in_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Already have an account? Sign in"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/create_account_button"
+        app:layout_constraintStart_toStartOf="@+id/create_account_button"
+        app:layout_constraintTop_toBottomOf="@+id/create_account_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

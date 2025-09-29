@@ -35,7 +35,7 @@ class ResultsActivity : AppCompatActivity() {
     }
 
     private fun displayScores(container: LinearLayout, scores: Map<String, Float>) {
-        container.removeAllViews() // Clear previous views
+        container.removeAllViews()
 
         val dimensionMap = mapOf(
             "Introvert_Extrovert" to "Energy",
@@ -53,8 +53,8 @@ class ResultsActivity : AppCompatActivity() {
             val dominantTrait = if (score < 0) trait1 else trait2
             val displayName = dimensionMap[dimension] ?: dimension
 
-            title.text = "$displayName: $dominantTrait"
-            description.text = "Score: ${String.format("%.1f", score)}%"
+            title.text = "$displayName ($trait1 vs. $trait2)"
+            description.text = "Your dominant trait is $dominantTrait with a score of ${String.format("%.1f", Math.abs(score))}%"
 
             container.addView(scoreView)
         }

@@ -89,3 +89,24 @@ async def get_latest_result(current_user: schemas.User = Depends(dependencies.ge
 async def get_assessment_history(current_user: schemas.User = Depends(dependencies.get_current_user), db: Session = Depends(get_db)):
     return crud.get_user_assessment_history(db, user_id=current_user.id)
 
+# --- Static Pages Endpoint ---
+from fastapi.responses import HTMLResponse
+import os
+
+@my_app.get("/pages/{page_name}", response_class=HTMLResponse)
+async def read_page(page_name: str):
+    # This is a simple security check to prevent directory traversal
+    if page_name not in ["privacy-policy.html", "delete-account.html"]:
+        raise HTTPException(status_code=404, detail="Page not found")
+
+    # Construct the path to the file in the parent directory
+    # NOTE: This assumes the script is run from the 'app' directory.
+    file_path = os.path.join(os.path.dirname(__file__), "..", page_name)
+    
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail="File not found on server")
+    
+    with open(file_path, "r", encoding="utf-8") as f:
+        content = f.read()
+    return HTMLResponse(content=content)
+

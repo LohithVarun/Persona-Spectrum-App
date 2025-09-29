@@ -114,7 +114,7 @@ def calculate_and_save_personality_result(db: Session, user_id: int, answers: Li
                 norm_factors[dimension] += 1
     for dimension in scores:
         if norm_factors[dimension] > 0:
-            max_possible_score = 2 * norm_factors[dimension]
+            max_possible_score = 4 * norm_factors[dimension]
             scores[dimension] = (scores[dimension] / max_possible_score) * 100 if max_possible_score != 0 else 0
     development_plan = generate_development_plan(scores)
     dominant_traits = [rec['trait'] for rec in development_plan]

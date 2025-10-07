@@ -10,6 +10,39 @@ In a world saturated with self-assessment tools, many individuals find existing 
 
 The goal of this project was to design and build a full-stack personality assessment application that provides users with a clear and actionable understanding of their character. The system works by having a native Android client communicate with a backend API. Users complete a structured psychometric questionnaire on the app, and the backend service analyzes their responses to generate a detailed personality profile. The application then presents this profile along with a personalized development plan, complete with tailored advice and resources to guide the user's personal growth.
 
+## Running the Project
+
+To run the backend server, follow these steps:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/LohithVarun/Persona-Spectrum-App.git
+    cd Persona-Spectrum-App
+    ```
+
+2.  **Create and activate a virtual environment:**
+    ```bash
+    # Create the environment
+    python -m venv venv
+    
+    # Activate it (on Windows)
+    venv\Scripts\activate
+    
+    # On macOS/Linux, use: source venv/bin/activate
+    ```
+
+3.  **Install the dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4.  **Run the server:**
+    Navigate into the `app` directory and run the following command. Using `--host 0.0.0.0` will make the server accessible from other devices on your network.
+    ```bash
+    cd app
+    uvicorn main:my_app --reload --host 0.0.0.0
+    ```
+
 ## My Responsibility
 
 *   **Full-Stack Architecture Design:** Planned the complete system architecture, defining the relationship between the Python backend, the Android frontend, and the database.
